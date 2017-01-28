@@ -122,4 +122,15 @@ in rec {
     fromGit = true;
   });
 
+  nixIPFS = lib.lowPrio (common rec {
+    name = "nix-1.12${suffix}";
+    suffix = "ipfs";
+    src = fetchFromGitHub {
+      owner = "NixIPFS";
+      repo = "nix";
+      rev = "e2bedd2a842a91f02f16736ef7f0ff3b17e3a74d";
+      sha256 = "0kvijkb0phlybq85d4a3c19qrsnily5vywfwm38r527z1zxrll09";
+    };
+    fromGit = true;
+  });
 }
